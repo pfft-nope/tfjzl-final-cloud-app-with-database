@@ -9,30 +9,30 @@ from .models import (
     Submission,
 )
 
-# Inline editing for Lesson within Course
+# Inline for Lesson inside Course
 class LessonInline(admin.TabularInline):
     model = Lesson
     extra = 1
 
 
-# Inline editing for Question within Course
+# Inline for Question inside Course
 class QuestionInline(admin.TabularInline):
     model = Question
     extra = 1
 
 
-# Inline editing for Choice within Question
+# Inline for Choice inside Question
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 2
 
 
-# Admin configuration for Course
+# Admin for Course
 class CourseAdmin(admin.ModelAdmin):
     inlines = [LessonInline, QuestionInline]
 
 
-# Admin configuration for Question
+# Admin for Question
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [ChoiceInline]
 
